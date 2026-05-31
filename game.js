@@ -1,5 +1,6 @@
 const output = document.getElementById("output");
 const choices = document.getElementById("choices");
+const gameBox = document.getElementById("game");
 
 /* =========================
    ANIMATION HELPERS
@@ -18,7 +19,12 @@ function shakeOutput() {
 
 function flashDamage() {
     output.classList.add("flash");
-    setTimeout(() => output.classList.remove("flash"), 200);
+    setTimeout(() => output.classList.remove("flash"), 250);
+}
+
+function realmGlow() {
+    gameBox.classList.add("realm-glow");
+    setTimeout(() => gameBox.classList.remove("realm-glow"), 1200);
 }
 
 /* =========================
@@ -119,17 +125,19 @@ function battle(enemyName, next) {
 ========================= */
 
 function forest() {
-    say("You enter the Whispering Forest.\nA Shadow Beast appears!");
+    realmGlow();
+    say("🌲 You enter the Whispering Forest.\nA Shadow Beast emerges from the mist!");
     battle("Shadow Beast", () => {
-        say("You find the Gem of Dawn!");
+        say("✨ You obtain the **Gem of Dawn**!");
         buttons([{ label: "Return to Map", action: map }]);
     });
 }
 
 function emberRealm() {
-    say("You step into the Ember Realm.\nAn Ember Wolf attacks!");
+    realmGlow();
+    say("🔥 You step into the Ember Realm.\nAn Ember Wolf leaps from the flames!");
     battle("Ember Wolf", () => {
-        say("You find the Ember Gem!");
+        say("🔥 You obtain the **Ember Gem**!");
         buttons([{ label: "Return to Map", action: map }]);
     });
 }
