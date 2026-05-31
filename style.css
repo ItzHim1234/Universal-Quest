@@ -12,12 +12,15 @@ body {
     background: #222;
     padding: 20px;
     border-radius: 10px;
+    animation: fadeIn 0.8s ease;
 }
 
 #output {
     white-space: pre-line;
     margin-bottom: 20px;
     min-height: 200px;
+    font-size: 18px;
+    animation: fadeIn 0.4s ease;
 }
 
 button {
@@ -28,8 +31,41 @@ button {
     margin: 5px;
     border-radius: 6px;
     cursor: pointer;
+    transition: 0.2s;
 }
 
 button:hover {
     background: #666;
+    transform: scale(1.08);
 }
+
+/* Fade animation */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Shake animation for attacks */
+.shake {
+    animation: shake 0.3s ease;
+}
+
+@keyframes shake {
+    0% { transform: translateX(0); }
+    25% { transform: translateX(-5px); }
+    50% { transform: translateX(5px); }
+    75% { transform: translateX(-5px); }
+    100% { transform: translateX(0); }
+}
+
+/* Flash red when taking damage */
+.flash {
+    animation: flash 0.2s ease;
+}
+
+@keyframes flash {
+    0% { background: #222; }
+    50% { background: #552222; }
+    100% { background: #222; }
+}
+
