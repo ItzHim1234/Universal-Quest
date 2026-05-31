@@ -31,7 +31,6 @@ body {
     animation: fadeIn 0.4s ease;
 }
 
-/* Buttons */
 button {
     background: #2d2d44;
     color: #fff;
@@ -50,13 +49,11 @@ button:hover {
     box-shadow: 0 0 10px #5555ff;
 }
 
-/* Fade animation */
 @keyframes fadeIn {
     from { opacity: 0; transform: translateY(10px); }
     to { opacity: 1; transform: translateY(0); }
 }
 
-/* Shake animation for attacks */
 .shake {
     animation: shake 0.3s ease;
 }
@@ -69,7 +66,6 @@ button:hover {
     100% { transform: translateX(0); }
 }
 
-/* Flash red when taking damage */
 .flash {
     animation: flash 0.25s ease;
 }
@@ -80,7 +76,6 @@ button:hover {
     100% { background: rgba(60, 0, 0, 0.4); }
 }
 
-/* Realm transition glow */
 .realm-glow {
     animation: realmGlow 1.2s ease;
 }
